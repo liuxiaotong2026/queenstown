@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>皇后镇住宿</title>
+<style>
+  @font-face{font-family:'Carlito Regular';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/Carlito-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Carlito Bold';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/Carlito-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Carnac Bold';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/Carnac-Bold.woff2') format('woff2'),url('https://www.queenstownnz.co.nz/includes/public/fonts/Carnac-Bold.woff') format('woff');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Publico Text Semibold Italic';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/PublicoText-SemiboldItalic-Web.otf') format('opentype');font-weight:600;font-style:italic;font-display:swap;}
+
+  :root{
+    --white:#fff;
+    --white-off:#f4ece1;
+    --cream:#f8f6f1;
+    --brown:#3f3939;
+    --blue:#3c748d;
+    --blue-dark:#004157;
+    --blue-light:#91b5be;
+    --orange:#c86128;
+    --orange-light:#d79951;
+    --orange-dark:#522e13;
+    --yellow:#f6da8c;
+    --green:#708640;
+    --green-dark:#2d4119;
+    --green-light:#aebf99;
+    --font-body:'Carlito Regular',sans-serif;
+    --font-display:'Carnac Bold',sans-serif;
+    --font-serif:'Publico Text Semibold Italic',serif;
+    --width-base:1568px;
+    --width-feature:1440px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    font-size:18px;
+    color:var(--brown);
+    background:var(--white);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  a{color:var(--blue-dark);text-decoration:none;}
+  a:hover{color:var(--orange);}
+  section{scroll-margin-top:72px;}
+
+  .wrap{max-width:var(--width-feature);margin:0 auto;padding:0 24px;}
+
+  h1{font-family:var(--font-display);font-size:clamp(35px,5vw,70px);color:var(--blue-dark);text-transform:uppercase;line-height:1.15em;font-weight:400;}
+  h2{font-family:var(--font-serif);font-size:clamp(28px,2.8vw,35px);color:var(--blue-dark);line-height:1.25em;font-weight:400;}
+  h3{font-family:var(--font-display);font-size:clamp(30px,2.8vw,35px);color:var(--blue-dark);text-transform:uppercase;line-height:1.15em;font-weight:400;}
+  h4{font-family:var(--font-display);font-size:clamp(15px,1.5vw,22px);color:var(--brown);text-transform:uppercase;line-height:1.25em;font-weight:400;}
+  p{font-family:var(--font-body);font-size:18px;line-height:1.5em;color:var(--brown);}
+
+  .kicker{font-family:var(--font-body);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-dark);}
+
+  /* ---------- 导航 ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:transparent;
+    transition:background .35s ease;
+  }
+  header.nav.scrolled{background:var(--blue-dark);}
+  .nav-inner{
+    max-width:var(--width-base);margin:0 auto;padding:0 24px;
+    height:72px;display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{height:36px;width:auto;object-fit:contain;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{
+    font-family:var(--font-body);font-size:16px;font-weight:400;
+    color:#fff;text-transform:uppercase;letter-spacing:.65px;
+    border-right:1px solid rgba(255,255,255,.3);padding-right:32px;
+  }
+  .nav-links a:last-child{border-right:none;padding-right:0;}
+
+  /* ---------- 首屏 ---------- */
+  .hero{position:relative;overflow:hidden;}
+  .hero-banner{width:100%;height:70vh;min-height:400px;overflow:hidden;}
+  .hero-banner img{width:100%;height:100%;object-fit:cover;}
+  .hero-text{padding:64px 24px;text-align:center;}
+  .hero h1{color:var(--blue-dark);font-size:clamp(35px,5.5vw,70px);}
+  .hero p{margin:20px auto 0;font-size:clamp(16px,1.4vw,18px);max-width:680px;color:var(--brown);}
+
+  .btn{
+    display:inline-block;padding:14px 36px;font-family:var(--font-body);font-size:16px;
+    text-transform:uppercase;letter-spacing:.65px;
+    transition:background .25s ease,color .25s ease;
+  }
+  .btn-primary{background:var(--blue-dark);color:#fff;}
+  .btn-primary:hover{background:var(--orange);color:#fff;}
+  .btn-secondary{background:var(--brown);color:#fff;}
+  .btn-secondary:hover{background:var(--orange);color:#fff;}
+  .btn-outline{border:2px solid #fff;color:#fff;background:transparent;}
+  .btn-outline:hover{background:#fff;color:var(--blue-dark);}
+
+  /* ---------- 通用区段 ---------- */
+  .sec{padding:80px 0;}
+  .sec-head{max-width:780px;margin-bottom:48px;}
+  .sec-head .kicker{margin-bottom:12px;}
+  .sec-head h2{margin-bottom:16px;}
+  .sec-head p{color:var(--brown);}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* ---------- 引言 ---------- */
+  .intro{background:var(--cream);}
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .intro-media{aspect-ratio:4/3;overflow:hidden;}
+
+  /* ---------- 分类卡片 ---------- */
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .cat-card{display:block;position:relative;}
+  .cat-media{position:relative;display:block;aspect-ratio:515/646;overflow:hidden;}
+  .cat-media img{transition:transform .6s ease;}
+  .cat-card:hover .cat-media img{transform:scale(1.05);}
+  .cat-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,65,87,.55) 100%);
+  }
+  .cat-name{
+    position:absolute;left:20px;right:20px;bottom:24px;z-index:2;color:#fff;
+    font-family:var(--font-display);font-size:22px;text-transform:uppercase;line-height:1.2;
+  }
+
+  /* ---------- 精选住宿 ---------- */
+  .featured{background:var(--cream);}
+  .stay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px;}
+  .stay-media{aspect-ratio:640/491;overflow:hidden;}
+  .stay-media img{transition:transform .6s ease;}
+  .stay-card:hover .stay-media img{transform:scale(1.05);}
+  .stay-body{padding:20px 0 0;}
+  .stay-body h4{margin-bottom:8px;}
+  .stay-loc{font-size:14px;color:var(--blue);margin-bottom:12px;}
+  .stay-desc{font-size:15px;color:var(--brown);line-height:1.6em;}
+  .read-more{display:inline-block;margin-top:12px;font-size:14px;color:var(--blue-dark);text-transform:uppercase;letter-spacing:.65px;border-bottom:1px solid var(--blue-dark);padding-bottom:2px;}
+  .read-more:hover{color:var(--orange);border-color:var(--orange);}
+
+  /* ---------- 可持续横幅 ---------- */
+  .band{position:relative;padding:120px 0;text-align:center;overflow:hidden;}
+  .band-img{position:absolute;inset:0;}
+  .band-img img{width:100%;height:100%;object-fit:cover;}
+  .band-mask{position:absolute;inset:0;background:rgba(0,65,87,.5);}
+  .band-content{position:relative;z-index:2;color:#fff;max-width:720px;margin:0 auto;padding:0 24px;}
+  .band-content .kicker{color:#fff;opacity:.8;}
+  .band-content h2{color:#fff;}
+
+  /* ---------- 结尾 CTA ---------- */
+  .cta-band{background:var(--blue-dark);color:#fff;text-align:center;padding:64px 0;}
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:#fff;opacity:.9;margin:16px auto 32px;max-width:520px;}
+
+  /* ---------- 页脚 ---------- */
+  footer{background:#fff;color:var(--blue-dark);padding:56px 0 40px;border-top:1px solid #c9c5bb;}
+  .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;}
+  .foot-brand img,img.foot-brand{height:40px;width:auto;object-fit:contain;}
+  footer p{font-size:14px;max-width:460px;margin-top:14px;line-height:1.8;}
+  .foot-link{font-size:14px;color:var(--blue-dark);border-bottom:1px solid var(--blue-dark);padding-bottom:1px;}
+  .foot-link:hover{color:var(--orange);border-color:var(--orange);}
+  .foot-bottom{margin-top:44px;padding-top:22px;border-top:1px solid rgba(0,65,87,.15);font-size:12px;color:var(--blue);letter-spacing:.05em;}
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:1024px){
+    .cat-grid{grid-template-columns:repeat(2,1fr);}
+    .stay-grid{grid-template-columns:repeat(2,1fr);}
+    .intro-grid{grid-template-columns:1fr;gap:32px;}
+    body{font-size:16px;}
+    p{font-size:16px;}
+  }
+  @media (max-width:640px){
+    .wrap,.nav-inner,.hero-text{padding-left:16px;padding-right:16px;}
+    .sec{padding:56px 0;}
+    .nav-links{display:none;}
+    .cat-grid,.stay-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- 导航 -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <img src="https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/queenstownnz-redesign/header_logo_white_372153b6-19b8-4c5a-a471-e1a3a18d3f8c.png" alt="皇后镇">
+    </a>
+    <nav class="nav-links">
+      <a href="#categories">住宿类型</a>
+      <a href="#featured">精选住宿</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-banner">
+    <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_930,q_65,w_2304,x_3217,y_1194/v1/clients/queenstownnz/Hilton_Queenstown_Resort_Spa_Lake_by_night_c4a0e98e-a2f0-43e7-be86-e74ec44d78ee.jpg" alt="">
+  </div>
+  <div class="hero-text wrap">
+    <h1>皇后镇，总有一处适合你</h1>
+    <p>不管你是来慢享时光、睡到自然醒，还是早起去探索一切，皇后镇都有最适合你的那一处住处。</p>
+  </div>
+</section>
+
+<!-- 住宿分类 -->
+<section class="sec" id="categories">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">住宿类型</div>
+      <h2>无论何种旅行风格，都能找到理想住处</h2>
+    </div>
+    <div class="cat-grid">
+
+      <a class="cat-card" href="categories/hotels-and-resorts.html">
+        <div class="cat-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_646,q_65,w_515,x_2602,y_1063/v1/clients/queenstownnz/QueenstownNZ1_1e96f80f-f2bd-42e8-8cea-875663456b26.jpg" alt="">
+        </div>
+        <span class="cat-name">酒店与度假村</span>
+      </a>
+
+      <a class="cat-card" href="categories/motels.html">
+        <div class="cat-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_646,q_65,w_515,x_1392,y_831/v1/clients/queenstownnz/Blue_Peaks_Apartments_Two_Bedroom_6_d882e816-e28a-42d7-a0a5-bf804a220873.jpg" alt="">
+        </div>
+        <span class="cat-name">汽车旅馆</span>
+      </a>
+
+      <a class="cat-card" href="categories/serviced-apartments.html">
+        <div class="cat-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_646,q_65,w_515,x_950,y_450/v1/clients/queenstownnz/The_Penthouse_by_Eichardts_19_5691ead1-33ea-43ac-8d6c-637d55f7b85b.jpg" alt="">
+        </div>
+        <span class="cat-name">服务式公寓</span>
+      </a>
+
+      <a class="cat-card" href="categories/bed-and-breakfasts.html">
+        <div class="cat-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_646,q_65,w_515,x_640,y_289/v1/clients/queenstownnz/maxresdefault_53baa505-7af0-4f70-84b3-b7086bb74094.jpg" alt="">
+        </div>
+        <span class="cat-name">精品民宿（含早餐）</span>
+      </a>
+
+      <a class="cat-card" href="categories/backpackers.html">
+        <div class="cat-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_646,q_65,w_515/v1/clients/queenstownnz/Backpackers_dining_on_Queenstown_Lakefront_6974cd0c-fc4f-4ebc-8e6a-5c03a9dd8d85.jpg" alt="">
+        </div>
+        <span class="cat-name">背包客与青年旅舍</span>
+      </a>
+
+      <a class="cat-card" href="categories/lodges-and-retreats.html">
+        <div class="cat-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_646,q_65,w_515/v1/clients/queenstownnz/Aro_Ha_11_e57f14cc-fa91-434e-896d-451abe77e534.jpg" alt="">
+        </div>
+        <span class="cat-name">山林奢邸・避世别院</span>
+      </a>
+
+      <a class="cat-card" href="categories/holiday-homes.html">
+        <div class="cat-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_646,q_65,w_515,x_1032,y_488/v1/clients/queenstownnz/Luxury_Holiday_Rental_Villa_De_Luxe_Queenstown_e148c4fc-44b3-43f0-a021-de3af874c2dd.jpg" alt="">
+        </div>
+        <span class="cat-name">度假私寓</span>
+      </a>
+
+      <a class="cat-card" href="categories/holiday-parks.html">
+        <div class="cat-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_646,q_65,w_515,x_1440,y_619/v1/clients/queenstownnz/Qtown_Isite_image_1f5e169c-4740-47dc-bd6b-c069594cd3aa.jpg" alt="">
+        </div>
+        <span class="cat-name">度假公园与露营地</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- 精选住宿：低影响可持续 -->
+<section class="sec featured" id="featured">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">皇后镇精选</div>
+      <h2>低影响可持续住宿</h2>
+      <p>安心入眠，也安心于你的选择。</p>
+    </div>
+    <div class="stay-grid">
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/sunrise-copy_4739EFE1-0985-48F3-A2D82A916D913274_7b210a2e-5596-44e0-a1bb2380e34db25e.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/sherwood.html">舍伍德酒店</a></h4>
+          <div class="stay-loc">554 Frankton Road</div>
+          <p class="stay-desc">坐落于三公顷起伏山坡之上，俯瞰瓦卡蒂普湖的绝美景致，以可持续生活方式与本土体验闻名。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/Atrium-and-Bar2_7de36c66-5056-a36a-0cb3ba422c172724.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/novotel-lakeside.html">诺富特皇后镇湖畔酒店</a></h4>
+          <div class="stay-loc">cnr Earl St &amp; Marine Parade</div>
+          <p class="stay-desc">坐落于世界上最如诗如画的地点之一，出门即是湖滨步道与镇区中心。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/Untitled-design-70-_4B09B48D-8814-4F2A-BFC77967100F2C3F_7de1f341-b814-4cc4-8d22d3dba5346030.png" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/headwaters-eco-lodge.html">源头格伦诺基生态旅舍</a></h4>
+          <div class="stay-loc">42 Oban Street</div>
+          <p class="stay-desc">距皇后镇仅40分钟车程的格伦诺基，壮丽山河令人心驰神往，生态旅舍让你与自然同呼吸。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/Gibbston-Valley-Lodge-and-Spa---Villas-1_55BBC093-18A6-4EEF-865FEEC2A74A2D71_3f9401b0-def9-40e6-ad829b0026b39b79.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/gibbston-valley.html">吉布斯顿山谷</a></h4>
+          <div class="stay-loc">1820 State Highway 6, Gibbston</div>
+          <p class="stay-desc">距皇后镇25分钟，坐落于中奥塔哥最古老的创始葡萄园之中，融合美酒与奢华住宿。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/DJI_20240708093936_0605_D_CB5871B6-5C14-44D6-8E6E309CE8224BD7_1268c725-f21c-4de5-895d2923cc4bf600.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/kinloch-wilderness.html">金洛赫荒野度假屋</a></h4>
+          <div class="stay-loc">862 Kinloch Road</div>
+          <p class="stay-desc">提供多种房型以适应不同预算，带你踏上一段穿越时光的旅程，感受金洛赫的原始与宁静。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/A79P0120-medium_8154016a-5056-a36a-0c28dd78929d65a9.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/hilton-queenstown.html">希尔顿皇后镇水疗度假村</a></h4>
+          <div class="stay-loc">Kawarau Village, 79 Peninsula Road</div>
+          <p class="stay-desc">位于卡瓦劳村核心，坐拥瓦卡蒂普湖全景，温泉水疗与湖畔餐饮带来奢享假期。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/Relaxing-Bed-002-_BE6B4BD2-D14B-47DD-9EC8DC4017DA73BA_d3b33300-1b13-4049-89017c602a160e87.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/azur-lodge.html">阿祖尔奢华旅舍</a></h4>
+          <div class="stay-loc">23 Mackinnon Terrace</div>
+          <p class="stay-desc">现代风格的奢华旅舍，私人露台正对新西兰最壮丽的湖山景致，静谧而浪漫。</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 精选住宿：家庭友好 -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">皇后镇</div>
+      <h2>家庭友好住宿</h2>
+      <p>为全家出游精心设计的住宿选择，从度假公园到汽车旅馆与酒店，满足各种预算的家庭假期需求。</p>
+    </div>
+    <div class="stay-grid">
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/Villa-Exterior-views_50A7E39F-A923-463B-BA50EA04F65C95AE_21963b45-db5d-4abb-9c2caae0d9f78a53.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/driftaway-queenstown.html">漂流度假公园</a></h4>
+          <div class="stay-loc">11 Lake Avenue</div>
+          <p class="stay-desc">新西兰最新的度假公园之一，2022年3月开业，精致小屋与房车营地沿湖而建。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/Emma-and-Elsa_7cba51fe-5056-a36a-0c439f5711f47336.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/queenstown-top10.html">皇后镇 TOP 10 度假公园</a></h4>
+          <div class="stay-loc">70 Arthurs Point Road</div>
+          <p class="stay-desc">提供从营地到独立小屋的多种住宿选择，适合各类预算，是举家出游的温馨据点。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/MajorDomo-Arrowfield-Sign_7e98b116-5056-a36a-0c08b69ddbbe25dd.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/arrowfield-apartments.html">箭场公寓</a></h4>
+          <div class="stay-loc">115 Essex Avenue</div>
+          <p class="stay-desc">现代宽敞的一至三卧室公寓，坐落于宁静壮美的阿尔卑斯环境中，适合家庭入住。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/Blue-Peaks-Lodge_Drone-Photo-5_3AFC2699-3D67-49BF-A0CD88A265F00D9C_8b21a191-6aec-4ce4-a48eb54767d09bb0.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/blue-peaks-lodge.html">蓝峰旅馆</a></h4>
+          <div class="stay-loc">11 Sydney Street</div>
+          <p class="stay-desc">皇后镇中心的明亮现代汽车旅馆，提供标准间、一卧或更大房型选择。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/Main-Autumn-shot_818c640f-5056-a36a-0c22dcd9c7aae640.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/creeksyde.html">皇后镇溪畔度假公园</a></h4>
+          <div class="stay-loc">54 Robins Rd</div>
+          <p class="stay-desc">屡获殊荣的度假公园，距镇中心仅数米之遥，设施齐全，温馨舒适。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/new-wall-signage_CF8DC6DE-FD24-4E30-903A6A500AB08293_95c1c839-8d88-4f25-a9a3a80500df6264.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/garden-court.html">花园庭院酒店</a></h4>
+          <div class="stay-loc">41 Frankton Road</div>
+          <p class="stay-desc">我们很自豪与你分享这片天堂。无论你想享受无数户外活动还是悠然放松，这里都是理想之选。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/Swiss-Belresort-Coronet-Peak---Standard-Room_657477F3-884E-4B45-90CA882BF1D7EAE0_666b981d-a63f-4e86-b8349a14af2b8853.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/swiss-belresort.html">瑞士贝尔度假村与皇冠峰别墅</a></h4>
+          <div class="stay-loc">161 Arthurs Point Road</div>
+          <p class="stay-desc">三星半级度假村，拥有54间客房与6栋别墅，适合家庭与团体入住。</p>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="stay-media">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_491,q_65,w_640/v1/crm/queenstownnz/2AT-ParkShots-001-web_F9983BDD-D500-44C2-8A1892B760F0EA70_5743c971-3470-446d-b6ac235abf15ddfa.jpg" alt="">
+        </div>
+        <div class="stay-body">
+          <h4><a href="listing/hampshire-arrowtown.html">汉普郡度假公园 - 箭镇</a></h4>
+          <div class="stay-loc">12B Centennial Avenue</div>
+          <p class="stay-desc">距箭镇中心仅8分钟步行路程，提供多种住宿选择，适合预算友好的家庭假期。</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 结尾 CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>准备好开启皇后镇之旅了吗？</h2>
+    <p>八种住宿类型，总有一处湖光山色正在等你。</p>
+    <a class="btn btn-outline" href="#categories">浏览全部住宿类型</a>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="wrap">
+    
+    
+  </div>
+</footer>
+
+<script>
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 60){ nav.classList.add('scrolled'); }
+    else{ nav.classList.remove('scrolled'); }
+  }, {passive:true});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山林奢邸・避世别院 | 皇后镇住宿</title>
+<style>
+@font-face{font-family:'Carlito Regular';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/Carlito-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Carnac Bold';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/Carnac-Bold.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Publico Text Semibold Italic';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/PublicoText-SemiboldItalic-Web.otf') format('opentype');font-weight:600;font-style:italic;font-display:swap;}
+:root{
+  --white:#fff;--cream:#f8f6f1;--brown:#3f3939;--blue:#3c748d;
+  --blue-dark:#004157;--blue-light:#91b5be;--orange:#c86128;
+  --font-body:'Carlito Regular',sans-serif;--font-display:'Carnac Bold',sans-serif;
+  --font-serif:'Publico Text Semibold Italic',serif;--width-base:1568px;--width-feature:1440px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);font-size:18px;color:var(--brown);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased;}
+img{display:block;width:100%;height:100%;object-fit:cover;}
+a{color:var(--blue-dark);text-decoration:none;}
+a:hover{color:var(--orange);}
+h1{font-family:var(--font-display);font-size:clamp(35px,5vw,70px);color:var(--blue-dark);text-transform:uppercase;line-height:1.15em;font-weight:400;}
+h2{font-family:var(--font-serif);font-size:clamp(28px,2.8vw,35px);color:var(--blue-dark);line-height:1.25em;font-weight:400;}
+h3{font-family:var(--font-display);font-size:clamp(30px,2.8vw,35px);color:var(--blue-dark);text-transform:uppercase;line-height:1.15em;font-weight:400;}
+h4{font-family:var(--font-display);font-size:clamp(15px,1.5vw,22px);color:var(--brown);text-transform:uppercase;line-height:1.25em;font-weight:400;}
+p{font-family:var(--font-body);font-size:18px;line-height:1.5em;color:var(--brown);}
+.wrap{max-width:var(--width-feature);margin:0 auto;padding:0 24px;}
+.kicker{font-family:var(--font-body);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-dark);}
+
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--blue-dark);}
+.nav-inner{max-width:var(--width-base);margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;}
+.brand img{height:36px;width:auto;object-fit:contain;}
+.nav-links{display:flex;gap:32px;align-items:center;}
+.nav-links a{font-family:var(--font-body);font-size:16px;font-weight:400;color:#fff;text-transform:uppercase;letter-spacing:.65px;border-right:1px solid rgba(255,255,255,.3);padding-right:32px;}
+.nav-links a:last-child{border-right:none;padding-right:0;}
+
+.page-hero{width:100%;height:42vh;min-height:280px;overflow:hidden;margin-top:72px;}
+.page-hero img{width:100%;height:100%;object-fit:cover;}
+
+.breadcrumb{padding:20px 0;font-size:14px;color:var(--blue);}
+.breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb span{color:var(--brown);}
+
+.sec{padding:64px 0;}
+.sec-head{max-width:780px;margin-bottom:40px;}
+.sec-head .kicker{margin-bottom:12px;}
+.sec-head h2{margin-bottom:16px;}
+
+/* 分类页的商户网格 */
+.listing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px;}
+.listing-media{display:block;aspect-ratio:640/491;overflow:hidden;}
+.listing-media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.listing-card:hover .listing-media img{transform:scale(1.05);}
+.listing-body{padding:28px 0 0;}
+.listing-body h4{margin-bottom:8px;}
+.listing-loc{font-size:14px;color:var(--blue);margin-bottom:12px;}
+.listing-desc{font-size:15px;color:var(--brown);line-height:1.6em;}
+.read-more{display:inline-block;margin-top:12px;font-size:14px;color:var(--blue-dark);text-transform:uppercase;letter-spacing:.65px;border-bottom:1px solid var(--blue-dark);padding-bottom:2px;}
+.read-more:hover{color:var(--orange);border-color:var(--orange);}
+
+/* 商户详情页 */
+.detail-hero{margin-top:72px;}
+.detail-hero img{width:100%;max-height:420px;object-fit:cover;}
+.detail-info{padding:32px 0;}
+.detail-info h1{margin-bottom:16px;}
+.detail-addr{font-size:16px;color:var(--blue);margin-bottom:24px;}
+.detail-desc{font-size:18px;line-height:1.8;max-width:800px;margin-bottom:32px;}
+.detail-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:800px;padding:24px 0;border-top:1px solid #e0dcd8;border-bottom:1px solid #e0dcd8;}
+.detail-meta h4{margin-bottom:6px;color:var(--blue);}
+.detail-meta p{font-size:15px;}
+.back-link{display:inline-block;margin-bottom:24px;font-size:14px;text-transform:uppercase;letter-spacing:.65px;color:var(--blue-dark);border-bottom:1px solid var(--blue-dark);padding-bottom:2px;}
+.back-link:hover{color:var(--orange);border-color:var(--orange);}
+
+footer{background:#fff;color:var(--blue-dark);padding:56px 0 40px;border-top:1px solid #c9c5bb;}
+.foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;}
+.foot-brand img,img.foot-brand{height:40px;width:auto;object-fit:contain;filter:invert(20%) sepia(88%) saturate(2349%) hue-rotate(173deg) brightness(92%) contrast(101%);}
+footer p{font-size:14px;max-width:460px;margin-top:14px;line-height:1.8;}
+.foot-link{font-size:14px;color:var(--blue-dark);border-bottom:1px solid var(--blue-dark);padding-bottom:1px;}
+.foot-link:hover{color:var(--orange);border-color:var(--orange);}
+.foot-bottom{margin-top:44px;padding-top:22px;border-top:1px solid rgba(0,65,87,.15);font-size:12px;color:var(--blue);letter-spacing:.05em;}
+
+@media (max-width:1024px){
+  .listing-grid{grid-template-columns:repeat(2,1fr);}
+  .detail-meta{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:640px){
+  .wrap,.nav-inner{padding-left:16px;padding-right:16px;}
+  .nav-links{display:none;}
+  .listing-grid{grid-template-columns:1fr;}
+  .detail-meta{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html"><img src="https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/queenstownnz-redesign/header_logo_white_372153b6-19b8-4c5a-a471-e1a3a18d3f8c.png" alt="皇后镇"></a>
+    <nav class="nav-links">
+      <a href="../index.html#categories">住宿类型</a>
+      <a href="../index.html#featured">精选住宿</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_1214,q_65,w_1600/v1/clients/queenstownnz/Aro_Ha_11_e57f14cc-fa91-434e-896d-451abe77e534.jpg" alt="山林奢邸・避世别院">
+</div>
+
+<div class="wrap">
+  <div class="breadcrumb">
+    <a href="../index.html">首页</a> &rsaquo; <a href="../index.html#categories">住宿类型</a> &rsaquo; <span>山林奢邸・避世别院</span>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">住宿类型</div>
+      <h2>山林奢邸・避世别院</h2>
+      <p>在南阿尔卑斯山深处享受顶级私密居所：顶层公寓、五星级精品旅舍、群山环抱的湖畔猎渔小屋，或是远离喧嚣的隐逸康养胜地。在皇后镇山林旅舍，尽情享受沉浸式奢华度假。</p>
+    </div>
+    <div class="listing-grid">
+      <article class="listing-card">
+        <a class="listing-media" href="../listing/headwaters-eco-lodge.html">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_800,q_70,w_1400/v1/crm/queenstownnz/Untitled-design-70-_4B09B48D-8814-4F2A-BFC77967100F2C3F_7de1f341-b814-4cc4-8d22d3dba5346030.png" alt="源头格伦诺基生态旅舍">
+        </a>
+        <div class="listing-body">
+          <h4><a href="../listing/headwaters-eco-lodge.html">源头格伦诺基生态旅舍</a></h4>
+          <div class="listing-loc">42 Oban Street</div>
+          <p class="listing-desc">距皇后镇仅40分钟车程的格伦诺基，壮丽山河令人心驰神往。源头生态旅舍采用可持续设计，太阳能供电、雨水收集，让你与自然同呼吸。周围是步道、河谷与原始森林，是徒步与...</p>
+        </div>
+      </article>
+      <article class="listing-card">
+        <a class="listing-media" href="../listing/gibbston-valley.html">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_800,q_70,w_1400/v1/crm/queenstownnz/Gibbston-Valley-Lodge-and-Spa---Villas-1_55BBC093-18A6-4EEF-865FEEC2A74A2D71_3f9401b0-def9-40e6-ad829b0026b39b79.jpg" alt="吉布斯顿山谷">
+        </a>
+        <div class="listing-body">
+          <h4><a href="../listing/gibbston-valley.html">吉布斯顿山谷</a></h4>
+          <div class="listing-loc">1820 State Highway 6, Gibbston</div>
+          <p class="listing-desc">距皇后镇25分钟，坐落于中奥塔哥最古老的创始葡萄园之中。融合美酒与奢华住宿，你可以在酒窖品鉴中奥塔哥黑皮诺，在水疗中心放松身心，或在私人露台欣赏葡萄园与雪山交织...</p>
+        </div>
+      </article>
+      <article class="listing-card">
+        <a class="listing-media" href="../listing/kinloch-wilderness.html">
+          <img loading="lazy" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_800,q_70,w_1400/v1/crm/queenstownnz/DJI_20240708093936_0605_D_CB5871B6-5C14-44D6-8E6E309CE8224BD7_1268c725-f21c-4de5-895d2923cc4bf600.jpg" alt="金洛赫荒野度假屋">
+        </a>
+        <div class="listing-body">
+          <h4><a href="../listing/kinloch-wilderness.html">金洛赫荒野度假屋</a></h4>
+          <div class="listing-loc">862 Kinloch Road</div>
+          <p class="listing-desc">提供多种房型以适应不同预算，带你踏上一段穿越时光的旅程，感受金洛赫的原始与宁静。这里远离喧嚣，只有鸟鸣与风声，是远离都市、回归自然的理想之地。...</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    
+    
+  </div>
+</footer>
+</body>
+</html>
