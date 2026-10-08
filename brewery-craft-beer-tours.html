@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>啤酒厂与精酿啤酒 · 皇后镇美食</title>
+<style>
+  @font-face{font-family:'Carlito Regular';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/Carlito-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Carnac Bold';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/Carnac-Bold.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:'Publico Text Semibold Italic';src:url('https://www.queenstownnz.co.nz/includes/public/fonts/PublicoText-SemiboldItalic-Web.otf') format('opentype');font-weight:600;font-style:italic;font-display:swap;}
+  :root{--blue-dark:#004157;--brown:#3f3939;--cream:#f8f6f1;--white-off:#f4ece1;--orange:#c86128;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Carlito Regular',sans-serif;font-size:18px;color:var(--brown);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  a{color:var(--blue-dark);text-decoration:none;}
+  a:hover{color:var(--orange);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .topbar{background:var(--blue-dark);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+  .topbar a{color:#fff;font-size:14px;letter-spacing:.2em;text-transform:uppercase;}
+  .topbar .brand{font-family:'Carnac Bold',sans-serif;font-size:20px;letter-spacing:.18em;}
+  .hero{position:relative;height:62vh;min-height:380px;overflow:hidden;}
+  .hero img{width:100%;height:100%;object-fit:cover;}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,65,87,.25) 0%,rgba(0,65,87,.55) 100%);}
+  .hero-text{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:0 24px;z-index:2;}
+  .hero-text .kicker{font-size:13px;letter-spacing:.5em;text-transform:uppercase;opacity:.85;margin-bottom:18px;}
+  .hero-text h1{font-family:'Publico Text Semibold Italic',serif;font-size:clamp(36px,5vw,60px);font-weight:600;line-height:1.2;}
+  .sec{padding:80px 0;}
+  .lead{max-width:760px;margin:0 auto 40px;font-family:'Publico Text Semibold Italic',serif;font-size:clamp(22px,2.4vw,30px);color:var(--blue-dark);line-height:1.45;text-align:center;}
+  .body p{max-width:760px;margin:0 auto 22px;font-size:17.5px;color:var(--brown);line-height:1.85;}
+  .cta{text-align:center;margin-top:60px;}
+  .btn{display:inline-block;padding:14px 40px;background:var(--blue-dark);color:#fff;font-size:14px;letter-spacing:.3em;text-transform:uppercase;transition:background .25s ease;}
+  .btn:hover{background:var(--orange);color:#fff;}
+  footer{background:#fff;border-top:1px solid #c9c5bb;padding:32px 24px;text-align:center;font-size:13px;color:var(--blue-dark);letter-spacing:.05em;}
+  @media(max-width:640px){.sec{padding:56px 0;}.hero{height:48vh;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="../cover.html">皇后镇</a>
+  <a href="../cover.html#eat">返回美食</a>
+</div>
+<section class="hero">
+  <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_800,q_65,w_1600,x_1370,y_1401/v1/clients/queenstownnz-redesign/Altitude_Brewing_3__79ebe664-6dd2-432a-ab09-7a1024c2424d.jpg" alt="皇后镇精酿啤酒">
+  <div class="hero-text">
+    <p class="kicker">EAT &amp; DRINK · BREWERY &amp; CRAFT BEER</p>
+    <h1>啤酒厂与精酿啤酒</h1>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap">
+    <p class="lead">探索皇后镇活力四射的精酿啤酒圈。</p>
+    <div class="body">
+      <p>皇后镇精酿文化蓬勃发展，拥有六家精酿啤酒厂和三家精酿酒吧，各有风味。</p>
+      <p>这里的精酿和葡萄酒一样，是当地风土的独特表达。 酿酒师采摘野生植物、自种啤酒花、选用本地食材，将产区风味融入酒中。</p>
+      <p>参加精酿之旅，品尝必试麦芽酒，感受独特的阿尔卑斯风味，还能结识酿酒师，了解酿造背后的故事。</p>
+    </div>
+    <div class="cta">
+      <a class="btn" href="../cover.html#eat">返回美食板块</a>
+    </div>
+  </div>
+</section>
+<footer>© 2026 Queenstown Travel · 中文演示页</footer>
+</body>
+</html>
